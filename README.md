@@ -50,14 +50,16 @@ cd PatentAgent
 cp .env.example .env
 ```
 
-`.env` に以下を記入：
+`.env` に以下を記入（API認証情報は別途提供されるもの）：
 
 ```
-JPO_API_ID=b2rw9is.rv-n
-JPO_API_PASSWORD=9ad6anrr_ne4
+JPO_API_ID=YOUR_API_ID
+JPO_API_PASSWORD=YOUR_API_PASSWORD
 JPO_TOKEN_URL=https://ip-data.jpo.go.jp/auth/token
-SLACK_WEBHOOK_URL=https://hooks.slack.com/services/YOUR_WEBHOOK_URL
+SLACK_WEBHOOK_URL=YOUR_WEBHOOK_URL
 ```
+
+API認証情報（JPO_API_ID、JPO_API_PASSWORD）は、[特許庁APIサイト](https://ip-data.jpo.go.jp/pages/top.html)から取得してください。
 
 3. **Python依存パッケージインストール**
 

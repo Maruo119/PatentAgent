@@ -168,10 +168,12 @@ Lambda コンソール → 関数選択 → 設定 → 環境変数 → 編集
 
 | キー | 値 |
 |------|-----|
-| `JPO_API_ID` | `b2rw9is.rv-n` |
-| `JPO_API_PASSWORD` | `9ad6anrr_ne4` |
+| `JPO_API_ID` | `YOUR_API_ID` |
+| `JPO_API_PASSWORD` | `YOUR_API_PASSWORD` |
 | `JPO_TOKEN_URL` | `https://ip-data.jpo.go.jp/auth/token` |
-| `SLACK_WEBHOOK_URL` | `https://hooks.slack.com/services/YOUR_WEBHOOK_URL` |
+| `SLACK_WEBHOOK_URL` | `YOUR_WEBHOOK_URL` |
+
+※ API ID とパスワードは [特許庁APIサイト](https://ip-data.jpo.go.jp/pages/top.html) から取得してください
 
 ---
 
@@ -344,8 +346,8 @@ AWS マネジメントコンソール → Secrets Manager → シークレット
 
 ```json
 {
-  "JPO_API_ID": "b2rw9is.rv-n",
-  "JPO_API_PASSWORD": "9ad6anrr_ne4"
+  "JPO_API_ID": "YOUR_API_ID",
+  "JPO_API_PASSWORD": "YOUR_API_PASSWORD"
 }
 ```
 

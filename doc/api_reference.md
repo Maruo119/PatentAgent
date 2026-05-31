@@ -20,7 +20,7 @@
 
 ```bash
 curl -X POST https://ip-data.jpo.go.jp/auth/token \
-  -u "b2rw9is.rv-n:9ad6anrr_ne4"
+  -u "YOUR_API_ID:YOUR_API_PASSWORD"
 ```
 
 **レスポンス例：**
@@ -311,8 +311,8 @@ from patent_api import PatentAPIClient
 
 # クライアント初期化
 client = PatentAPIClient(
-    api_id="b2rw9is.rv-n",
-    api_password="9ad6anrr_ne4",
+    api_id="YOUR_API_ID",
+    api_password="YOUR_API_PASSWORD",
     token_url="https://ip-data.jpo.go.jp/auth/token"
 )
 
