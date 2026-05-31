@@ -19,8 +19,22 @@ class PatentAPIClient:
     def get_access_token(self) -> str:
         """Get access token from JPO API."""
         try:
-            auth = (self.api_id, self.api_password)
-            response = requests.post(self.token_url, auth=auth, timeout=10)
+            headers = {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+
+            data = {
+                "grant_type": "password",
+                "username": self.api_id,
+                "password": self.api_password
+            }
+
+            response = requests.post(
+                self.token_url,
+                headers=headers,
+                data=data,
+                timeout=10
+            )
             response.raise_for_status()
 
             token_data = response.json()
@@ -29,7 +43,8 @@ class PatentAPIClient:
             if not self.access_token:
                 raise ValueError("No access token in response")
 
-            logger.info("Successfully obtained access token from JPO API")
+            token_suffix = self.access_token[-2:] if len(self.access_token) >= 2 else "**"
+            logger.info(f"Successfully obtained access token from JPO API (token ends with: ...{token_suffix})")
             return self.access_token
 
         except requests.exceptions.RequestException as e:
